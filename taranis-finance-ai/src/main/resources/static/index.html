@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+    <title>Dashboard Executivo | Taranis Black - Rota 4</title>
+    <!-- Google Fonts para visual profissional -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --success: #16a34a;
+            --warning: #d97706;
+            --danger: #dc2626;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --text-heading: #0f172a;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .badge {
+            background-color: var(--accent);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .actions-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        button, .btn {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        button:hover, .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: #475569;
+        }
+
+        .btn-success {
+            background-color: var(--success);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            color: var(--text-heading);
+            margin-bottom: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card p, .card div {
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .highlight-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--accent);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 10px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .metric-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric-card h4 {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .metric-card span {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #64748b;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header>
+            <div>
+                <h1>Taranis Black — Inteligência Financeira e Operacional</h1>
+                <p>Programa Oracle Next Education (ONE G11) | Challenge Rota 4</p>
+            </div>
+            <span class="badge">Live AI Artifact</span>
+        </header>
+
+        <!-- Barra de Ações e Integração -->
+        <div class="actions-bar">
+            <button onclick="carregarAnalise()">🔄 Atualizar Análise da IA</button>
+            <a href="/api/taranis/export/csv" class="btn btn-success">📥 Baixar CSV (Mala Direta Word)</a>
+            <a href="/api/taranis/analise-ia" target="_blank" class="btn btn-secondary">🔗 Ver JSON Bruto</a>
+        </div>
+
+        <!-- Indicador de Carregamento -->
+        <div id="loading" class="loading">🤖 Consultando o Gemini e processando dados da Taranis Black...</div>
+
+        <!-- Grid de Conteúdo Dinâmico -->
+        <div id="content-grid" class="grid" style="display: none;">
+            
+            <!-- Resumo Executivo -->
+            <div class="card full-width">
+                <h3>📊 Resumo Executivo para a CEO</h3>
+                <div class="highlight-box">
+                    <p id="resumoExecutivo">Carregando...</p>
+                </div>
+            </div>
+            <!-- Fontes de Dados e Artefatos da Rota 4 -->
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-top: 20px;">
+                <h3 style="color: #1e293b; margin-top: 0; font-size: 1.1rem;">📂 Fontes de Dados e Artefatos Base da Rota 4</h3>
+                <ul style="margin: 0; padding-left: 20px; color: #475569; font-size: 0.95rem; line-height: 1.6;">
+                    <li><strong>DRE Orçado vs. Realizado:</strong> <code>05_Financas_Orcado_vs_Realizado.txt</code> (EBITDA de R$ 5,77mi vs R$ 9,85mi, PDD de R$ 1,11M e Fretes de R$ 960k)</li>
+                    <li><strong>Processo Operacional & SIPOC:</strong> <code>06_Descritivo_Processo_Operacional_SIPOC.txt</code> (Gargalo de 48h em crédito e ERP legado)</li>
+                    <li><strong>Base de People Analytics:</strong> <code>04_Base_Colaboradores_People_Analytics.txt</code> (280 colaboradores, turnover de 22,5%)</li>
+                </ul>
+            </div>
+            <!-- Diagnóstico e Problema -->
+            <div class="card">
+                <h3>⚠️ Cenário & Gargalo Identificado</h3>
+                <p id="cenarioProblema">Carregando...</p>
+            </div>
+
+            <!-- Ação Prioritária (Lean & IA) -->
+            <div class="card">
+                <h3>⚡ Recomendação Prioritária (Ação Lean)</h3>
+                <p id="acaoPrioritaria">Carregando...</p>
+            </div>
+
+            <!-- Métricas de Impacto -->
+            <div class="card full-width">
+                <h3>🎯 Impactos e Metas de Sucesso</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h4>Ciclo de Crédito</h4>
+                        <span id="metricaSucesso">Carregando...</span>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Aluno Responsável</h4>
+                        <span id="alunoNome">Consultor ONE</span>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Rota Ativa</h4>
+                        <span id="rotaEscolhida">Rota 4</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Rodapé -->
+        <footer>
+            Oracle Next Education & Alura — Challenge Empresa Simulada Taranis Black (2026)
+        </footer>
+    </div>
+
+    <!-- Script de Integração com o Backend Spring Boot -->
+    <script>
+        async function carregarAnalise() {
+            const loadingEl = document.getElementById('loading');
+            const gridEl = document.getElementById('content-grid');
+
+            loadingEl.style.display = 'block';
+            gridEl.style.display = 'none';
+
+            try {
+                const response = await fetch('/api/taranis/analise-ia?foco=DRE');
+                if (!response.ok) throw new Error('Erro ao comunicar com a API');
+                
+                const data = await response.json();
+                const props = data.propriedades || data;
+
+                // 1. Resumo Executivo
+                document.getElementById('resumoExecutivo').innerText = 
+                    props.ResumoExecutivo || props.resumoExecutivo || 'Resumo executivo não retornado pela API.';
+                
+                // 2. Cenário / Gargalo (Atualizado para mapear CenarioProblema perfeitamente)
+                document.getElementById('cenarioProblema').innerText = 
+                    props.CenarioProblema || props.cenarioProblema || props.Cenario || 'Conciliação manual entre 3 planilhas e ERP legado.';
+                
+                // 3. Ação Prioritária
+                document.getElementById('acaoPrioritaria').innerText = 
+                    props.RecomendacaoPrioritaria || props.acaoPrioritaria || 'Automação de triagem e aprovação de crédito.';
+                
+                // 4. Tratamento seguro para as Métricas (evita o [object Object])
+                let metricaTexto = props.MetricasSucesso || props.metricasSucesso || 'Redução do ciclo de 48h para < 1h.';
+                if (typeof metricaTexto === 'object' && metricaTexto !== null) {
+                    metricaTexto = Array.isArray(metricaTexto) ? metricaTexto.join(' • ') : Object.values(metricaTexto).join(' • ');
+                }
+                document.getElementById('metricaSucesso').innerText = metricaTexto;
+                
+                // 5. Aluno e Rota
+                document.getElementById('alunoNome').innerText = 
+                    props.NomeCompleto || props.alunoNome || 'Consultor ONE G11';
+                
+                document.getElementById('rotaEscolhida').innerText = 
+                    props.TurmaCoorte ? `${props.TurmaCoorte} — Rota 4` : 'Rota 4 — Finanças e Operações';
+
+                loadingEl.style.display = 'none';
+                gridEl.style.display = 'grid';
+            } catch (error) {
+                console.error(error);
+                loadingEl.innerHTML = '❌ Erro ao carregar os dados da API. Certifique-se de que a aplicação Spring Boot está rodando.';
+            }
+        }
+
+        // Executa ao carregar a página
+        window.onload = carregarAnalise;
+    </script>
+</body>
+</html>

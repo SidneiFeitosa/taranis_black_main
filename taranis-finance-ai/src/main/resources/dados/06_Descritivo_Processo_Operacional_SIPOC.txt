@@ -1,0 +1,66 @@
+TARANIS BLACK | DOSSIÊ DE OPERAÇÕES & CONTROLADORIA (ROTA 4)
+Mapeamento do Fluxo Operacional: Aprovação de Pedido, Faturamento e Expedição B2B
+Base Oficial de Processos para Construção da Matriz SIPOC e Diagrama de Ishikawa com IA
+1. CONTEXTO DO MACROPROCESSO E IMPACTOS DE NEGÓCIO
+O fluxo de pedidos corporativos representa 70% da receita da Taranis Black (R$ 33,6 milhões/ano)
+A Taranis Black processa mensalmente entre 180 e 220 pedidos corporativos faturados (vendas de médio e grande porte de cadeiras ErgoPro, mesas SmartDesk e cabines Silence). A meta diretiva para 2026 estabelece que o ciclo total entre a assinatura da proposta e a expedição física da mercadoria não deve ultrapassar 24 horas úteis.
+Entretanto, o crescimento de 35% ao ano sobrecarregou os sistemas legados e os assistentes financeiros. Atualmente, o tempo médio entre o fechamento comercial e o despacho ultrapassa 5 dias úteis, gerando atritos diários com clientes, cancelamentos de pedidos urgentes e um atraso crônico de 5 dias no fechamento contábil mensal.
+2. O FLUXO ATUAL PASSO A PASSO (MAPEAMENTO "AS-IS")
+Identificação detalhada dos 5 gargalos operacionais que travam a esteira de faturamento
+Passo 1: Envio da Proposta Comercial pelo Vendedor (Disparo Despadronizado)
+O consultor de vendas B2B conclui a negociação com o cliente e recebe o PDF da proposta assinado digitalmente ou digitalizado. Em vez de registrar os dados em um sistema integrado, o vendedor redige um e-mail manual para financeiro@taranisblack.com.br anexando o PDF. Não há validação prévia de estoque, limite de crédito ou conferência de CNPJ antes do envio. Em dias de pico (final de mês), mais de 40 e-mails caem na caixa de entrada sem ordem clara de prioridade.
+Passo 2: Triagem Manual e Pesquisa de Bureau de Crédito (40 minutos por pedido)
+O assistente financeiro abre o e-mail, faz o download do PDF e precisa chavear manualmente entre três janelas na tela: o ERP legado (onde consulta histórico de compras anteriores), o portal web do Serasa Experian (onde consulta pendências financeiras, protestos e score de crédito do CNPJ) e uma planilha local do Excel ('Controle_Limites_2026.xlsx'). O tempo médio de consulta e cópia de dados é de 40 minutos por proposta. Se houver qualquer inconsistência (ex: razão social diferente do cartão CNPJ), o assistente trava o processo e redige um e-mail de volta ao vendedor pedindo esclarecimentos.
+Passo 3: Solicitação de Aprovação Hierárquica por E-mail (Gargalo de Alçada)
+Após compilar os dados na planilha, o assistente monta um novo e-mail formal direcionado ao Gerente Financeiro contendo o resumo: 'Empresa X / Pedido de R$ 85.000 / Condição 30-60-90 / Score Serasa 720. Podemos faturar?'. Como a Taranis Black não possui um motor de regras de crédito automatizado, até mesmo pedidos pequenos (ex.: R$ 8.000) de clientes antigos dependem da aprovação individual da gerência.
+Passo 4: Espera por Decisão da Liderança (Retenção de até 48 horas)
+O Gerente Financeiro participa frequentemente de reuniões de diretoria, comitês de produto e viagens operacionais entre a matriz em São Paulo e a fábrica. O e-mail de aprovação permanece na caixa de entrada por períodos de 24 a 48 horas úteis. Enquanto isso, o cliente corporativo liga cobrando a data de entrega e o vendedor comercial envia mensagens insistentes no WhatsApp do assistente cobrando a liberação do pedido.
+Passo 5: Faturamento Manual e Transmissão para o CD em Santa Catarina (Erros de Digitação)
+Ao receber o 'De acordo' por e-mail do gerente, o assistente redige manualmente o espelho da Nota Fiscal no ERP legado. Como os dados da proposta em PDF são copiados e colados à mão, ocorrem erros frequentes em códigos de produto (ex: cadastrar tecido cinza em vez de preto) e na inscrição estadual da transportadora. Em seguida, o assistente envia um terceiro e-mail manual para expedicao.cd@taranisblack.com.br em Joinville/SC autorizando a separação da carga. Se houver divergência de frete (CIF vs FOB), o caminhão não é liberado pela transportadora, acumulando diárias de armazenagem.
+3. ELEMENTOS DE ENTRADA PARA A MATRIZ SIPOC
+Mapeamento dos 5 componentes essenciais para estruturar o fluxo na ferramenta Lean com IA
+S (Suppliers / Fornecedores)
+I (Inputs / Entradas)
+P (Process / Macroprocesso)
+O (Outputs / Saídas)
+C (Customers / Clientes)
+Consultores de Vendas B2B e SDRs
+Proposta comercial assinada em PDF
+1. Recebimento e triagem de propostas no e-mail
+Ordem de venda cadastrada no sistema
+Assistentes Financeiros (Análise de crédito)
+Clientes Corporativos (Compradores B2B)
+Dados cadastrais (CNPJ, IE, Endereço de entrega)
+2. Consulta de birô de crédito e histórico de compras
+Dossiê e parecer de crédito do cliente
+Gerente Financeiro (Aprovador de alçada)
+Bureau de Crédito (Serasa Experian)
+Score financeiro, protestos e dívidas ativas
+3. Submissão e aprovação de alçada de crédito
+Autorização formal de faturamento a prazo
+Faturamento / Contabilidade
+Gerente Financeiro (Aprovador)
+Autorização formal de limite de crédito por e-mail
+4. Emissão de NF-e e geração de boletos 30/60/90
+DANFE, arquivo XML da NF-e e boletos bancários
+Cliente Comprador (Recebe boletos/NF)
+Centro de Distribuição (SC) e Transportadoras
+Tabela de fretes homologados e rotas logísticas
+5. Transmissão de ordem de expedição e agendamento
+Picking List (separação) e Minuta de Embarque
+Equipe do CD Joinville e Transportadora
+4. BASE DE CAUSAS RAÍZES PARA O DIAGRAMA DE ISHIKAWA (6M)
+Fatos observados na operação para guiar a análise de causa raiz com IA Generativa
+Ao construir o Diagrama de Ishikawa (Espinha de Peixe) com a IA, o aluno deve correlacionar o problema central — "Atraso de 5 dias no fechamento contábil e ciclo de faturamento excessivo de 5 dias úteis" — com as seguintes evidências coletadas nas auditorias internas:
+⚙️ 1. Método (Processos & Procedimentos): 
+Ausência de Procedimento Operacional Padrão (POP) documentado; fluxo dependente de comunicação informal por e-mail; falta de matriz de alçada automática (qualquer valor de pedido exige aprovação de gerência); regras de frete CIF/FOB não verificadas antes do fechamento.
+💻 2. Máquina (Sistemas & Tecnologia): 
+ERP legado sem capacidade de integração via API; ausência de OCR ou IA para leitura automática dos dados da proposta em PDF; dependência de 3 planilhas locais não sincronizadas (controle de crédito, tabela de preços e conferência de frete).
+👥 3. Mão de Obra (Pessoas & Competências): 
+Equipe financeira sobrecarregada com tarefas mecânicas de digitação e cópia de dados; sensação de desmotivação e burnout nos fechamentos mensais; liderança que centraliza aprovações triviais e retém o fluxo por falta de tempo hábil.
+📄 4. Material (Insumos & Documentos): 
+Propostas comerciais enviadas com campos preenchidos de forma incompleta pelos vendedores; divergência frequente entre códigos de produto da proposta e o cadastro no ERP; falta de comprovante de endereço atualizado do cliente no momento da venda.
+📊 5. Medição (Indicadores & Metas): 
+Inexistência de indicadores de SLA (tempo de resposta por etapa) monitorados em tempo real; diretoria só descobre os atrasos no fim do mês; falta de visibilidade do pipeline de pedidos represados por departamento.
+🏢 6. Meio Ambiente (Cultura & Comunicação): 
+Distância física e atrito de comunicação entre o time comercial (São Paulo) e a equipe de expedição do CD (Joinville/SC); cultura reativa de 'apagar incêndios' em vez de solucionar a causa raiz dos gargalos.
